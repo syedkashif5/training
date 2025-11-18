@@ -1,0 +1,39 @@
+name: Demo CI Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  demo-job:
+    name: Demo Job
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Show GitHub Runner Info
+        run: |
+          echo "Running on GitHub Actions!"
+          echo "Operating System:"
+          uname -a
+          echo "Repository:"
+          echo "${{ github.repository }}"
+          echo "Branch:"
+          echo "${{ github.ref }}"
+
+      - name: List project files
+        run: |
+          echo "Listing repository files:"
+          ls -al
+
+      - name: Run a test command
+        run: |
+          echo "This is a demo CI step."
+          echo "You can add any commands you want here."
+
+      - name: Finish demo
+        run: echo "Demo CI Completed Successfully!"
