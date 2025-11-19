@@ -38,4 +38,4 @@ jobs:
           echo "You can add any commands you want here."
 
       - name: Finish demo
-        run: echo "Demo CI Completed Successfully!"
+        run: echo "Demoo CI Completed Successfully!"
